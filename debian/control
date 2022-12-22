@@ -1,0 +1,30 @@
+Source: zssh
+Section: net
+Priority: optional
+Maintainer: Debian Deepin Packaging Team <pkg-deepin-devel@lists.alioth.debian.org>
+Uploaders:
+ Boyuan Yang <byang@debian.org>,
+Build-Depends:
+ debhelper-compat (= 13),
+ libncurses5-dev,
+ libreadline-dev,
+Standards-Version: 4.5.0
+Homepage: http://zssh.sourceforge.net/
+Vcs-Git: https://salsa.debian.org/pkg-deepin-team/zssh.git
+Vcs-Browser: https://salsa.debian.org/pkg-deepin-team/zssh
+
+Package: zssh
+Architecture: any
+Depends:
+ lrzsz,
+ openssh-client | telnet | telnet-ssl,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: interactive file transfers over ssh
+ zssh (Zmodem SSH) is a program for interactively transferring files to a
+ remote machine  while using  the secure  shell (ssh).  It is intended to
+ be a convenient  alternative to scp, allowing to  transfer files without
+ having to open another session and re-authenticate oneself.
+ .
+ Files are transferred through the zmodem  protocol,  using the rz and sz
+ commands.

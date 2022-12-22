@@ -1,0 +1,141 @@
+zssh (1.5c.debian.1-8) unstable; urgency=medium
+
+  * Rebuild for Debian 11.
+  * debian/control:
+    + Bump Standards-Version to 4.5.0.
+    + Bump debhelper compat to v13.
+
+ -- Boyuan Yang <byang@debian.org>  Wed, 05 Aug 2020 15:53:52 -0400
+
+zssh (1.5c.debian.1-7) unstable; urgency=medium
+
+  * Rebuild against gcc 8.2.
+  * debian/control:
+    + Update my maintainer email address and use the
+      @debian.org one.
+    + Bump Standards-Version to 4.2.1 (no changes needed).
+  * debian/rules: Remove legacy SAVERESTORE variable.
+  * debian/copyright: Refresh date information.
+
+ -- Boyuan Yang <byang@debian.org>  Wed, 10 Oct 2018 15:03:00 -0400
+
+zssh (1.5c.debian.1-6) unstable; urgency=medium
+
+  * Revert maintainer address to pkg-deepin-devel@lists.alioth.debian.org.
+
+ -- Boyuan Yang <073plan@gmail.com>  Sun, 03 Jun 2018 17:43:02 +0800
+
+zssh (1.5c.debian.1-5) unstable; urgency=medium
+
+  * Use team+pkg-deepin@tracker.debian.org in maintainer address.
+  * Bump Standards-Version to 4.1.4 (no changes needed).
+  * Bump debhelper compat version to v11.
+
+ -- Boyuan Yang <073plan@gmail.com>  Wed, 18 Apr 2018 15:56:06 +0800
+
+zssh (1.5c.debian.1-4) unstable; urgency=medium
+
+  * Adopt package. (Closes: #884946)
+  * d/patches: Refresh patches.
+  * d/control: add Homepage, Vcs-Git and Vcs-Browser field. Closes: #615455.
+  * Apply "wrap-and-sort -abst".
+  * Fully migration to dh, dropping cdbs buildsystem.
+  * Bump debhelper compat to v10.
+  * Add "dh-missing --fail-missing".
+  * d/patches: Add patch to fix typo in zssh.1 manpage.
+  * d/patches: Add patch to make package reproducible. Closes: #829705
+  * d/copyright: Rewrite using machine-readable format.
+  * This rebuild seems to have closes: #769366. Let's see if the problem
+    still exists.
+
+ -- Boyuan Yang <073plan@gmail.com>  Fri, 22 Dec 2017 15:14:12 +0800
+
+zssh (1.5c.debian.1-3.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Use format 3 quilt.
+  * Replace CPPFunction with rl_completion_func_t (Closes: #741761).
+
+ -- YunQiang Su <syq@debian.org>  Mon, 21 Jul 2014 08:22:29 +0000
+
+zssh (1.5c.debian.1-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/control: Build-Depend on libreadline-dev instead of
+    libreadline5-dev. (Closes: #553877)
+
+ -- Tim Retout <diocles@debian.org>  Wed, 17 Aug 2011 18:09:27 +0100
+
+zssh (1.5c.debian.1-3) unstable; urgency=low
+
+  * New maintainer: as agreed with bartm
+  * configure.in, openpty.c: GNU's openpty(3) is now detected and used.
+    Closes: #388036.
+  * debian/rules: Set DEB_AUTO_UPDATE_AUTO{HEADER,CONF} to 2.61. Now
+    config.h.in and configure will be recreated at build time. (This will
+    be undone once upstream accepts the patch to configure.in.)
+  * makefile.in: Commented out mandatory strip. (Closes: #438380).
+
+ -- Ben Wong <ben@wongs.net>  Tue, 25 Sep 2007 01:48:30 -0700
+
+zssh (1.5c.debian.1-2) unstable; urgency=low
+
+  * debian/*: Repackaged with cdbs.
+  * debian/control: Updated my e-mail address.
+  * debian/copyright: Updated.
+
+ -- Bart Martens <bartm@knars.be>  Sun, 20 May 2007 11:00:41 +0200
+
+zssh (1.5c.debian.1-1) unstable; urgency=low
+
+  * lrzsz-0.12.20: Removed.  Closes: #347521.
+  * Makefile.in: Removed lines related to lrzsz.
+  * Makefile.in, test/Makefile.in, fake_readline/Makefile.in: Added -f to rm
+    to be less noisy when cleaning.
+  * debian/README.Debian-source: Added.
+
+ -- Bart Martens <bart.martens@advalvas.be>  Tue, 17 Jan 2006 00:23:59 +0100
+
+zssh (1.5c-3) unstable; urgency=low
+
+  * debian/control: ssh is transitional package, and zssh only needs
+    openssh-client, so replaced the dependency
+
+ -- Bart Martens <bart.martens@advalvas.be>  Fri,  6 Jan 2006 23:18:51 +0100
+
+zssh (1.5c-2) unstable; urgency=low
+
+  * New maintainer (Closes: #282953)
+  * debian/control: linda gave dh-compat-greater-than-depends, added minimum
+    version of debhelper (>= 4.0.0) in Build-Depends
+  * debian/control: added homepage to Description
+
+ -- Bart Martens <bart.martens@advalvas.be>  Wed, 28 Dec 2005 00:20:45 +0100
+
+zssh (1.5c-1) unstable; urgency=low
+
+  * QA upload.
+  * New upstream release.  Closes: #282294.
+  * lrzsz-0.12.20/po/de.po: Apply corrections from Jens Seidel.
+    Closes: #313658.
+  * Switch to debhelper 4.
+  * debian/copyright: Include upstream copyright.
+  * debian/rules: Use `$(MAKE) distclean' rather than `$(MAKE) clean'.
+  * debian/watch: Add.
+  * Conforms to Standards version 3.6.2.
+
+ -- Matej Vela <vela@debian.org>  Thu, 13 Oct 2005 16:20:14 +0200
+
+zssh (1.5a-2) unstable; urgency=low
+
+  * QA Group upload orphaning this package
+  * debian/control: Updated build dependency to libreadline5-dev (closes:
+    #326279)
+
+ -- Andrew Pollock <apollock@debian.org>  Thu,  6 Oct 2005 09:53:37 +1000
+
+zssh (1.5a-1) unstable; urgency=low
+
+  * Initial release. Closes: #141677
+
+ -- Daniel Bungert <drb@debian.org>  Thu, 23 Jan 2003 22:20:46 -0500
